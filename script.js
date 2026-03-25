@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+  // DOM-Elemente auswählen
   const form = document.getElementById("orderForm");
   const feedback = document.getElementById("orderFeedback");
-  const cards = document.querySelectorAll(".card");
+  let cards = document.querySelectorAll(".card");
 
-  // Animation scroll
+  // IntersectionObserver = Animation beim Scrollen
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -13,9 +14,42 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Animation auf vorhandene Karten anwenden
   cards.forEach(card => observer.observe(card));
 
-  // Formulaire WhatsApp
+  // =========================================================
+  // API CALL
+  // =========================================================
+
+  // Externe Daten von einer API laden
+  fetch("https://jsonplaceholder.typicode.com/posts?_limit=3")
+    .then(response => response.json())
+    .then(data => {
+      const container = document.querySelector(".cards");
+
+      data.forEach(item => {
+        const apiCard = document.createElement("article");
+        apiCard.classList.add("card");
+
+        apiCard.innerHTML = `
+          <div class="card__body">
+            <h3>${item.title}</h3>
+            <p>${item.body}</p>
+          </div>
+        `;
+
+        container.appendChild(apiCard);
+        observer.observe(apiCard);
+      });
+    })
+    .catch(error => {
+      console.error("API Fehler:", error);
+    });
+
+  // =========================================================
+  // WHATSAPP FORMULAR
+  // =========================================================
+
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
