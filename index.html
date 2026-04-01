@@ -1,198 +1,230 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LeviChicken – Masthähnchen in Bamako</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LeviChicken</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
+  <header class="hero">
+    <div class="hero__overlay">
+      <nav class="nav">
+        <span class="nav__brand">LeviChicken</span>
 
-<header class="hero">
-  <div class="hero__overlay">
-    <nav class="nav">
-      <span class="nav__brand">LeviChicken</span>
-      <div class="nav__links">
-        <a href="#produkte">Produkte</a>
-        <a href="#ablauf">Ablauf</a>
-        <a href="#kontakt">Kontakt</a>
+        <div class="nav__links">
+          <a href="#produkte">Produkte</a>
+          <a href="#unser-ablauf">Ablauf</a>
+          <a href="#kontakt">Kontakt</a>
+        </div>
+      </nav>
+
+      <div class="hero__content">
+        <p class="hero__tag">Masthähnchen aus Bamako</p>
+        <h1>Frisches Geflügel direkt vom Hof</h1>
+        <p>Regionale Aufzucht, Qualität und Lieferung in 24h.</p>
+
+        <p class="trust">
+          ✔ +500 Kunden beliefert<br />
+          ✔ Lieferung in 24h<br />
+          ✔ 100% Frische garantiert
+        </p>
+
+        <a class="btn hero-btn" href="#kontakt">Jetzt bestellen</a>
+
+        <div class="search-box">
+          <input
+            id="searchInput"
+            type="text"
+            placeholder="Suche nach Hähnchen..."
+          />
+          <button type="button" id="searchBtn">🔍</button>
+        </div>
       </div>
-    </nav>
+    </div>
+  </header>
 
-    <div class="hero__content">
-      <p class="hero__tag">Masthähnchen aus Bamako</p>
-      <h1>Frisches Geflügel direkt vom Hof</h1>
-      <p>Regionale Aufzucht, Qualität und Lieferung in 24h.</p>
+  <main>
+    <section class="section" id="produkte">
+      <h2>Unsere Produkte</h2>
 
-      <p class="trust">
-        ✔ +500 Kunden beliefert<br>
-        ✔ Lieferung in 24h<br>
-        ✔ 100% Frische garantiert
+      <div class="cards">
+        <article class="card">
+          <img
+            src="https://images.unsplash.com/photo-1587593810167-a84920ea0781?w=800&auto=format&fit=crop&q=60"
+            alt="Frisches Hähnchen"
+          />
+          <div class="card__body">
+            <h3>Frisches Hähnchen</h3>
+            <p>Ab <strong>3.500 FCFA</strong></p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img
+            src="https://images.unsplash.com/photo-1518492104633-130d0cc84637?auto=format&fit=crop&w=1200&q=80"
+            alt="Verarbeitetes Hähnchen"
+          />
+          <div class="card__body">
+            <h3>Verarbeitetes Hähnchen</h3>
+            <p>Bereit zum Servieren</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img
+            src="https://images.unsplash.com/photo-1617347454431-f49d7ff5c3b1?q=80&w=1200&auto=format&fit=crop"
+            alt="Lieferung"
+          />
+          <div class="card__body">
+            <h3>Lieferung</h3>
+            <p>Schnell & gekühlt</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section api-section" id="api-ergebnisse">
+      <span class="eyebrow">API · Dynamische Inhalte</span>
+      <h2>Suchergebnisse aus der API</h2>
+      <p>
+        Hier werden die Bilder aus der Pexels-API als Karten auf der Seite angezeigt.
       </p>
 
-      <a class="btn hero-btn" href="#kontakt">Jetzt bestellen</a>
-    </div>
-  </div>
-</header>
+      <div id="results" class="results-grid"></div>
+    </section>
 
-<main>
+    <section class="section intro-section">
+      <span class="eyebrow">Bamako · Premium Masthähnchen</span>
+      <h2>Saftiges Masthähnchen direkt vom Landwirt</h2>
+      <p>
+        Wir pflegen jedes Tier mit ausgewogener Ernährung, reiner Luft und
+        modernem Wassermanagement, damit Sie ein authentisches und nachhaltiges
+        Produkt erhalten.
+      </p>
 
-<section class="section" id="produkte">
-  <h2>Unsere Produkte</h2>
-
-  <div class="cards">
-
-    <article class="card">
-      
-        <img src="https://imgs.search.brave.com/um9pnFrZjCleV0dzUVNpeOUZxjzzvGNbGRPUfhvRp0c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTMy/MzAwMzQ0OC9kZS9m/b3RvL2ZyaXNjaGVz/LXJvaGVzLWh1aG4t/YXVmLWVpbmVtLXJ1/c3Rpa2FsZW4taG9s/enRpc2NoLmpwZz9z/PTYxMng2MTImdz0w/Jms9MjAmYz01SWhV/OE5pUURiQnBWNmdl/VE5mNS1CaXlLZmtf/RkFXcVlOY1ltcV9P/RVpvPQ" alt="Frisches Hähnchen">
-      <div class="card__body">
-        <h3>Frisches Hähnchen</h3>
-        <p>Ab <strong>3.500 FCFA</strong></p>
+      <div class="hero-subline">
+        <span>🚚 Verfügbarkeit in 24 Stunden – Bamako & Umgebung</span>
       </div>
-    </article>
+    </section>
 
-    <article class="card">
-      <img src="https://images.unsplash.com/photo-1518492104633-130d0cc84637?auto=format&fit=crop&w=1200&q=80" alt="Verarbeitetes Hähnchen">
-      <div class="card__body">
-        <h3>Verarbeitetes Hähnchen</h3>
-        <p>Bereit zum Servieren</p>
+    <section class="grid-two info-section">
+      <article class="card">
+        <div class="card__body">
+          <span class="badge">Frische Garantie</span>
+          <h3>Direkte Lieferkette</h3>
+          <p>Von der Aufzucht bis zur Lieferung verfolgen wir jeden Schritt.</p>
+
+          <ul>
+            <li>Kühlkette kontrolliert</li>
+            <li>Tierarzt geprüft</li>
+            <li>QR-Code Herkunft</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card__body">
+          <span class="badge">Nachhaltig</span>
+          <h3>Ressourcenschonend</h3>
+          <p>Solarenergie und natürliches Futter für bessere Qualität.</p>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>92%</strong>
+              <span>Water Recycling</span>
+            </div>
+
+            <div class="stat">
+              <strong>48h</strong>
+              <span>Analyse</span>
+            </div>
+
+            <div class="stat">
+              <strong>24h</strong>
+              <span>Lieferung</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="unser-ablauf" class="section process-section">
+      <h2>Unser Ablauf</h2>
+
+      <div class="timeline-simple">
+        <div class="timeline-line"></div>
+
+        <div class="timeline-content">
+          <div class="timeline-step">
+            <h3>Aufzucht</h3>
+            <p>Gesunde Tiere mit natürlichem Licht und Kontrolle.</p>
+          </div>
+
+          <div class="timeline-step">
+            <h3>Wachstum</h3>
+            <p>Optimale Ernährung für Qualität und Geschmack.</p>
+          </div>
+
+          <div class="timeline-step">
+            <h3>Verarbeitung</h3>
+            <p>Hygienisch und schnell verarbeitet.</p>
+          </div>
+
+          <div class="timeline-step">
+            <h3>Lieferung</h3>
+            <p>Express innerhalb von 24h.</p>
+          </div>
+        </div>
       </div>
-    </article>
+    </section>
 
-    <article class="card">
-      <img src="https://imgs.search.brave.com/WIMWQa1QIRXPBZP1Ev_y0AmjutKwgZbA21Mvh_jDLcg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/dmVrdG9yZW4ta29z/dGVubG9zL2Fic3Ry/YWt0ZS1rb256ZXB0/aWxsdXN0cmF0aW9u/LWRlcy1saWVmZXJw/dW5rdHNfMzM1NjU3/LTM5MzcuanBnP3Nl/bXQ9YWlzX2h5YnJp/ZCZ3PTc0MCZxPTgw" alt="">
-      <div class="card__body">
-        <h3>Lieferung</h3>
-        <p>Schnell & gekühlt</p>
-      </div>
-    </article>
+    <section class="grid-two lower-cards">
+      <article class="card small-card">
+        <div class="card__body">
+          <span class="badge">Technologie</span>
+          <h3>Smart Farming</h3>
+          <p>Echtzeit-Sensoren für optimale Qualität.</p>
+        </div>
+      </article>
 
-  </div>
-</section class="section">
-  <span class="eyebrow">Bamako · Premium Masthänchen</span>
-  <h2>Saftiges Masthähnchen direkt vom Landwirt</h2>
-  <p>
-    Wir pflegen jedes Tier mit ausgewogener Ernährung, reiner Luft und modernem Wassermanagement,
-    damit Sie ein authentisches und nachhaltiges Produkt erhalten.
-  </p>
-
-  <div class="hero-subline">
-    <span>🚚 Verfügbarkeit in 24 Stunden – Bamako & umgebung</span>
-  </div>
-</section>
-
-<!-- CARDS INFO -->
-<section class="grid-two">
-
-  <article class="card">
-    <span class="badge">Frische Garantie</span>
-    <h3>Direkte Lieferkette</h3>
-    <p>Von der Aufzucht bis zur Lieferung verfolgen wir jeden Schritt.</p>
-    <ul>
-      <li>Kühlkette kontrolliert</li>
-      <li>Tierarzt geprüft</li>
-      <li>QR-Code Herkunft</li>
-    </ul>
-  </article>
-
-  <article class="card">
-    <span class="badge">Nachhaltig</span>
-    <h3>Ressourcenschonend</h3>
-    <p>Solarenergie und natürliches Futter für bessere Qualität.</p>
-
-    <div class="stats">
-      <div class="stat">
-        <strong>92%</strong>
-        <span>Water Recycling</span>
-      </div>
-      <div class="stat">
-        <strong>48h</strong>
-        <span>Analyse</span>
-      </div>
-      <div class="stat">
-        <strong>24h</strong>
-        <span>Lieferung</span>
-      </div>
-    </div>
-  </article>
-
-</section>
-
-<!-- TIMELINE -->
-<section id="unser ablauf" class="section unser ablauf">  
-  <h2>Unser Ablauf</h2>
-</section>
-  <div class="timeline">
-
-    <div class="timeline-item">
-      <h3>Aufzucht</h3>
-      <p>Gesunde Tiere mit natürlichem Licht und Kontrolle.</p>
-    </div>
-
-    <div class="timeline-item">
-      <h3>Wachstum</h3>
-      <p>Optimale Ernährung für Qualität und Geschmack.</p>
-    </div>
-
-    <div class="timeline-item">
-      <h3>Verarbeitung</h3>
-      <p>Hygienisch und schnell verarbeitet.</p>
-    </div>
-
-    <div class="timeline-item">
-      <h3>Lieferung</h3>
-      <p>Express innerhalb von 24h.</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- TESTIMONIAL -->
-<section class="grid-two">
-
-  <article class="card">
-    <span class="badge">Technologie</span>
-    <h3>Smart Farming</h3>
-    <p>Echtzeit-Sensoren für optimale Qualität.</p>
-  </article>
-
-  <article class="card">
-    <span class="badge">Kunden</span>
-    <h3>Erfahrungen</h3>
-    <p>
-      “Das beste Masthähnchen in Bamako – Qualität konstant und zuverlässig.”
-        </p>
-    </article>
-
+      <article class="card small-card">
+        <div class="card__body">
+          <span class="badge">Kunden</span>
+          <h3>Erfahrungen</h3>
+          <p>
+            “Das beste Masthähnchen in Bamako – Qualität konstant und zuverlässig.”
+          </p>
+        </div>
+      </article>
     </section>
 
     <section class="section contact" id="kontakt">
-    <h2>Bestellung</h2>
+      <h2>Bestellung</h2>
 
-    <form id="orderForm">
-        <input id="orderName" type="text" placeholder="Name" required>
-        <input id="orderQuantity" type="number" placeholder="Anzahl" required>
-        <input id="orderAddress" type="text" placeholder="Adresse" required>
-
-        <button type="submit" class="btn">WhatsApp senden</button>
+      <form id="orderForm">
+        <input id="orderName" type="text" placeholder="Name" required />
+        <input id="orderQuantity" type="number" placeholder="Anzahl" required />
+        <input id="orderAddress" type="text" placeholder="Adresse" required />
+        <button type="submit" class="btn btn-full">WhatsApp senden</button>
         <p id="orderFeedback"></p>
-    </form>
+      </form>
     </section>
+  </main>
 
-    </main>
-
-    <footer class="footer">
+  <footer class="footer">
     <p>© 2026 LeviChicken</p>
-    </footer>
+  </footer>
 
-    <a href="https://wa.me/22370000000" class="whatsapp-float" target="_blank">💬</a>
+  <a
+    href="https://wa.me/4915568512248"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    💬
+  </a>
 
-    <script src="script.js" defer></script>
-    </body>
-    </html>
+  <script src="script.js" defer></script>
+</body>
+</html>

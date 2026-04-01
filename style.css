@@ -1,4 +1,4 @@
-•⁠  ⁠{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -15,12 +15,10 @@ body {
   line-height: 1.6;
 }
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 .hero {
   background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-    url("https://images.unsplash.com/photo-1441122456239-401e92b73c65?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjN8fHBvdWxldHxlbnwwfHwwfHx8MA%3D%3D")
+    url("https://images.unsplash.com/photo-1441122456239-401e92b73c65?w=900&auto=format&fit=crop&q=60")
       center/cover no-repeat;
   color: white;
 }
@@ -112,9 +110,7 @@ body {
   margin-top: 8px;
 }
 
-/* =========================
-   BUTTONS
-========================= */
+/* BUTTONS */
 .btn {
   display: inline-block;
   border: none;
@@ -139,9 +135,7 @@ body {
   font-size: 1rem;
 }
 
-/* =========================
-   MAIN / SECTIONS
-========================= */
+/* MAIN */
 main {
   max-width: 1200px;
   margin: 0 auto;
@@ -180,9 +174,63 @@ main {
   padding-top: 8px;
 }
 
-/* =========================
-   CARDS
-========================= */
+/* SEARCH */
+.search-box {
+  display: flex;
+  align-items: stretch;
+  max-width: 480px;
+  margin-top: 24px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+}
+
+.search-box input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 14px 16px;
+  font-size: 1rem;
+}
+
+.search-box button {
+  border: none;
+  background: #16a34a;
+  color: white;
+  padding: 0 18px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* API RESULTS */
+.api-section {
+  margin-top: 10px;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 26px;
+  min-height: 40px;
+}
+
+.result-card {
+  background: white;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.result-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+/* CARDS */
 .cards,
 .grid-two {
   display: grid;
@@ -258,9 +306,7 @@ main {
   margin-top: 8px;
 }
 
-/* =========================
-   STATS
-========================= */
+/* STATS */
 .stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -280,9 +326,7 @@ main {
   margin-bottom: 6px;
 }
 
-/* =========================
-   TIMELINE SIMPLE
-========================= */
+/* TIMELINE */
 .process-section {
   margin-top: 10px;
 }
@@ -313,9 +357,7 @@ main {
   margin-bottom: 4px;
 }
 
-/* =========================
-   SMALL LOWER CARDS
-========================= */
+/* LOWER CARDS */
 .lower-cards {
   margin-top: 10px;
   margin-bottom: 90px;
@@ -325,61 +367,7 @@ main {
   padding: 24px 22px;
 }
 
-/* =========================
-   SEARCH
-========================= */
-.search-box {
-  display: flex;
-  align-items: stretch;
-  max-width: 480px;
-  margin-top: 24px;
-  border-radius: 12px;
-  overflow: hidden;
-  background: white;
-}
-
-.search-box input {
-  width: 100%;
-  border: none;
-  outline: none;
-  padding: 14px 16px;
-  font-size: 1rem;
-}
-
-.search-box button {
-  border: none;
-  background: #16a34a;
-  color: white;
-  padding: 0 18px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-#results {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
-  margin-top: 26px;
-}
-
-.result-card {
-  background: white;
-  border-radius: 18px;
-  padding: 18px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-}
-
-.result-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 12px;
-}
-
-/* =========================
-   CONTACT
-========================= */
+/* CONTACT */
 .contact {
   max-width: 1100px;
   margin: 0 auto 0;
@@ -410,18 +398,14 @@ main {
   margin-top: 6px;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 .footer {
   text-align: center;
   padding: 26px 20px;
   color: #111827;
 }
 
-/* =========================
-   WHATSAPP FLOAT
-========================= */
+/* FLOAT */
 .whatsapp-float {
   position: fixed;
   right: 24px;
@@ -439,9 +423,7 @@ main {
   box-shadow: 0 12px 30px rgba(34, 197, 94, 0.35);
 }
 
-/* =========================
-   ANIMATION
-========================= */
+/* ANIMATION */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -451,9 +433,7 @@ main {
   }
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .nav {
     flex-direction: column;

@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const PEXELS_API_KEY = "ZQENE97VQ3FTP5pTYGxXaiBKooiLzNmwGwLGuWSEYJZtRGX7QFYEERdh";
-  const WHATSAPP_NUMBER = "22382208266";
+  const WHATSAPP_NUMBER = "4915568512248";
 
   const form = document.getElementById("orderForm");
   const feedback = document.getElementById("orderFeedback");
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const html = photos
       .map(
         (photo) => `
-          <article class="result-card visible">
+          <article class="result-card">
             <img src="${photo.src.medium}" alt="${photo.alt || query}" />
             <h3>${photo.alt || query}</h3>
             <p>📷 ${photo.photographer}</p>
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const message = `Bonjour, je commande ${quantity} poulets. Nom : ${name}, Adresse : ${address}`;
-    const url = `https://wa.me/${+4915568512248}?text=${encodeURIComponent(message)}`;
+    const url ="https://wa.me/4915568512248";
 
     if (feedback) {
       feedback.textContent = "Redirection vers WhatsApp...";
